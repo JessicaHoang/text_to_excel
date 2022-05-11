@@ -12,9 +12,6 @@ from dataclasses import dataclass
 import pandas as pd
 import re
 import csv
-import PyQt5
-PyQt5.QtCore
-from PyQt5 import QtCore
 import sys
 import tkinter as tk
 
@@ -27,9 +24,9 @@ def filterData(lst):
 
 def text_to_excel():
     # Path of where the file is located.
-    textPath = r'C:\Users\jessica.hoang\OneDrive - Neato Robotics, Inc\Documents\Tof-testing3\2131N401035100282.txt'
+    textPath = r'C:\Users\khoa\Desktop\vscode_worksapce\text_to_excel\text\plushy_list.txt'
     # Path of where the csv file will end up
-    csvPath = r'C:\Users\jessica.hoang\OneDrive - Neato Robotics, Inc\Documents\Tof-testing3_as_CSV\2131N401035100282.csv'
+    csvPath = r'C:\Users\khoa\Desktop\vscode_worksapce\text_to_excel\excel\sample.csv'
     # Opening the file
     with open(textPath, 'r+') as file:
         dataframe1 = pd.read_csv(file, index_col=0, squeeze=True, sep='\t')
@@ -39,11 +36,11 @@ def text_to_excel():
         # dataframe1[['A', 'B']] = dataframe1[0].str.split(']', expand=True)
         # print(type(dataframe1))
         # Rows = list(filter(filterData, Rows))
-        [print(type(row)) for row in Rows]
+        [print(row) for row in Rows]
         #print(Rows)
         dataframe1.to_csv(csvPath)
 
    
 if __name__ == "__main__":
-    # text_to_excel()
-    openWindow()
+    text_to_excel()
+    # openWindow()
