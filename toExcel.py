@@ -13,14 +13,24 @@ import pandas as pd
 import re
 import csv
 import sys
-import tkinter as tk
+from tkinter import *
+'''
+In Tkinter, everything is a widget.
+Always a 2 step process: create it, than use it
 
-def openWindow():
-    window = tk.Tk()
+'''
 
-def filterData(lst):
-    if "Pandas(Index=" not in lst:
-        return lst
+def GUI():
+    root = Tk()
+    # creating myLabel widget
+    myLabel = Label(root, text="Hello world!")
+    # showing it onto the screen
+    myLabel.pack()
+    # A constant loop shows the movement on the program
+    root.mainloop()
+    
+
+
 
 def text_to_excel():
     # Path of where the file is located.
@@ -43,5 +53,5 @@ def text_to_excel():
 
    
 if __name__ == "__main__":
-    text_to_excel()
-    # openWindow()
+    # text_to_excel()
+    GUI()
